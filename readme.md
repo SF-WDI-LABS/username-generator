@@ -37,7 +37,6 @@ We'll use a tool called `rspec`  to outline our objectives AND test our code as 
 gem install rspec
 ```
 
-You might get an error here, but we believe in you. Fix it.
 
 ### Test Driven Development -- Red, Green, Refactor.
 Take a look inside the `/spec` folder, and you'll see our test suite broken up into 2 files.
@@ -54,28 +53,17 @@ rspec spec/the_warmup_spec.rb --format documentation
 
 You should see roughly the following output:
 
-    FFFFFFFF ---> 8 failed tests ("F"), 0 passed tests (".")
-    Failures:
+![](https://cloud.githubusercontent.com/assets/6520345/14794994/49d41a9a-0adb-11e6-8f5b-c9b8f49de100.png)
 
-      1) #say_hello returns 'hello'
-         Failure/Error: expect( say_hello ).to eq "hello"
-           
-           expected: "hello"
-                got: "hi"
-           
-           (compared using ==)
-         # ./spec/the_warmup_spec.rb:8:in `block (2 levels) in <top (required)>'
-    
-    Finished in 0.0028 seconds (files took 0.08831 seconds to load)
-    8 examples, 8 failures
+Followed by a more detailed look at each of the individual test outputs:
 
-    Failed examples:
-    rspec ./spec/the_warmup_spec.rb:7 # #say_hello returns 'hello'
+![image](https://cloud.githubusercontent.com/assets/6520345/14795071/a3ec7f4a-0adb-11e6-9445-6b224b1a2d0d.png)
 
 
-####Hooray!
+
+#### Hooray!
 * The first tests are failing. _We're seeing **RED**._
-* Now we need to write code to pass the tests and _turn them **GREEN**_. 
+* Now we need to write code to pass the tests and _turn them **GREEN**_.
 * When all the tests are green, we're ready to _stop and **REFACTOR**_!
 
 ## Warmup Challenge
@@ -89,7 +77,7 @@ Code your solutions in `warmup.rb`.
 * Run your tests frequently and read the output carefully.
 * BE *VERY CAREFUL* to use the correct function name.
 
-##Username Challenges
+## Username Challenges
 Run: `rspec spec/username_spec.rb`
 
 #### Level 1
@@ -113,11 +101,14 @@ Create a function called `user_type_prefix` that takes a level (integer) and ret
 Update your `build_username` function to use prefixes. It should now accept a privilege_level (in addition to the other parameters), and tack it on to the beginning of the username (e.g. "seller-jdoe78"). See the tests for more details.
 
 #### Level 3
-Create a function called `generate_username` that has four arguments (first_name, last_name, birth_year, privilege_level) and returns a _unique_ username. Come up with a simple way to store usernames as you create them. 
+Create a function called `generate_username` that has four arguments (first_name, last_name, birth_year, privilege_level) and returns a _unique_ username. Come up with a simple way to store usernames as you create them.
 
-STRETCH: If a username already exists, append "_1". Then, increment the counter each time you reuse the username (e.g. "jdoe78", "jdoe78\_1", "jdoe7\_2", "bbunny60", "bbunny60\_1").
+STRETCH: If a username already exists, append "_1". Then, increment the counter each time you reuse the username (e.g. "jdoe78", "jdoe78\_1", "jdoe78\_2", "bbunny60", "bbunny60\_1").
 
-#### BONUS -- Command-line inputs
+#### BONUS
+##### Remove special characters
+* If there are any non-alphabetical characters entered as part of the user's first or last name, make sure they are removed using a regular expression.
+
+##### Command-line inputs
 * OPTION 1 -- Interactively get user input from the command line and output a username to the console. I.e. when I run `ruby username.rb` I should be prompted (from the command line) for my name, birth year, etc.
 * OPTION 2 -- Accept command line arguments (e.g. `ruby username.rb john doe 1980`) and output a username to the console.
-

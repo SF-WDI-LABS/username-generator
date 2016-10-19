@@ -5,16 +5,17 @@ require "./username.rb"
 
 describe "#format_name" do
 
+
   it "combines the first letter of the first name with the last name" do
     expect( format_name("nathan", "allen") ).to eq "nallen"
     expect( format_name("justin", "castilla") ).to eq "jcastilla"
-    expect( format_name("ilias", "tsangaris") ).to eq "itsangaris"
+    expect( format_name("brianna", "veenstra") ).to eq "bveenstra"
   end
 
   it "returns a lowercase string" do
     expect( format_name("Nathan", "Allen") ).to eq "nallen"
     expect( format_name("Justin", "Castilla") ).to eq "jcastilla"
-    expect( format_name("ILIAS", "TSANGARIS") ).to eq "itsangaris"
+    expect( format_name("BRIANNA", "VEENSTRA") ).to eq "bveenstra"
   end
 
   it "removes extraneous whitespace" do
@@ -31,7 +32,7 @@ describe "#format_name" do
 
   it "removes special characters in strings (BONUS)" do
     expect( format_name("Nathan", "Allen!") ).to eq "nallen"
-    expect( format_name(" Ilias ", "%20Tsangaris") ).to eq "itsangaris"
+    expect( format_name(" Brianna ", "%20Veenstra") ).to eq "bveenstra"
     expect( format_name("'Justin'", "Ca-sti-lla.") ).to eq "jcastilla"
   end
 
@@ -143,4 +144,3 @@ describe "#generate_username" do
   end
 
 end
-
