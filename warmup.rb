@@ -1,11 +1,11 @@
 # Run `rspec spec/the_warmup_spec.rb` to get started.
 
 def say_hello
-  "hi"
+  "hello"
 end
 
 def scream(message)
-  message
+  message.upcase
 end
 
 def first_char
