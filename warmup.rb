@@ -5,13 +5,18 @@ def say_hello
 end
 
 def scream(message)
-  message.upcase
+  message.upcase + "!"
 end
 
-def first_char
-  "z"
+def first_char(string)
+  string[0].downcase
 end
 
-def polly_wanna
-  "crackercrackercracker"
+def polly_wanna(word)
+  word*3
+end
+
+
+def after_you
+  "no, after you"
 end
