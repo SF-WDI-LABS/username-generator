@@ -44,5 +44,20 @@ def user_type_prefix(integer)
 end
 
 def build_username(first, last, year, privilege_level = 0)
-user_type_prefix(privilege_level)+  format_name(first, last) + format_year(year)
+  user_type_prefix(privilege_level)+  format_name(first, last) + format_year(year)
+end
+
+
+
+def generate_username(first, last, year, privilege_level = 0)
+  used_usernames = ["kkong80"]
+  username = build_username(first, last, year, privilege_level)
+  puts username
+  if used_usernames.include?(username)
+    username = username + "_1"
+    used_usernames << username
+  else
+    used_usernames << username
+  end
+  return username
 end
