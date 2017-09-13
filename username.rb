@@ -93,6 +93,8 @@ def generate_username(first, last, year, level=0)
     $user_counts[username] = 0;
     username
     # appends a username count when the username already exists
+    # along with stringfying the given input
+    # this will also return if the username has been used along with how many times its been used
   else
     $user_counts[username] +=1
     user_count = $user_counts[username].to_s
