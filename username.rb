@@ -29,16 +29,19 @@ end
 # reminder to read all errors you are receiving
 # write elsif statement to try and get this to work
 # try not to overthink it
+# num = ["user", "seller", "manager", "admin"]
 def check_privilege(num = 0)
-    # privilege = ["user", "seller" , "manager", "admin"]
-    # privilege[0]
-    if num == 0
+
+    if num.floor == 0
       "user"
-    elsif num == 1
+    elsif  num.floor == 1
       "seller"
-    elsif num == 2
+    elsif num.floor == 2
       "manager"
-    elsif num == 3
+    else
       "admin"
     end
+end
+
+def generate_username (first_name, last_name, birth_year, privilege_level)
 end
