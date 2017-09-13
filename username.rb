@@ -13,7 +13,7 @@ end
 
 
 
-
+#not sure why this doesnt passr
 def check_privilege(type)
 
 if type.floor == 1
@@ -60,7 +60,22 @@ end
 
 
 
+def generate_username(privilege_level, year, first, last)
 
-def build_username
-	nil
+   date = year.to_s.slice(-2,2)
+   username = (first[0]+last).downcase
+
+if privilege_level.floor == 1
+	"seller"+"-"+username+date
+
+elsif privilege_level.floor == 2
+	"manager"+"-"+username+date
+
+elsif privilege_level.floor == 3 
+	"admin"+"-"+username+date
+
+else 
+  	"user"+"-"+username+date
+
+	end
 end
