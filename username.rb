@@ -11,7 +11,10 @@ end
 
 def format_year(year)
   user_year = year.to_s
+  if user_year.length == 4
   user_year[2,3]
+  else nil
+  end
 end
 
 def build_username(first_name, last_name, year)
