@@ -12,8 +12,8 @@ def format_name(first, last)
   if (first == "" || last == "")
     nil
   else
-  (first.gsub(/\s+/, "")[0] + last.gsub(/\s+/, "")).downcase
-  #(first.gsub(/[^a-z]/, "")[0] + last.gsub(/[^a-z]/, "")).downcase
+  # (first.gsub(/\s+/, "")[0] + last.gsub(/\s+/, "")).downcase
+  (first.gsub(/[^A-Za-z]/, "")[0] + last.gsub(/[^A-Za-z]/, "")).downcase
   end
 end
 
