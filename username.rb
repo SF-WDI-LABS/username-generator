@@ -1,14 +1,19 @@
 # Make sure to run the tests in your /spec folder
 # Run `rspec /spec/username_spec.rb` to get started.
 
+$argument_list = []
 
+ARGV.each do|a|
+  # puts "Argument: #{a}"
+  $argument_list.push(a)
+end
 
 def format_name(first, last)
   if (first == "" || last == "")
     nil
   else
   (first.gsub(/\s+/, "")[0] + last.gsub(/\s+/, "")).downcase
-  # (first.gsub(/[^a-z]/, "")[0] + last.gsub(/[^a-z]/, "")).downcase
+  #(first.gsub(/[^a-z]/, "")[0] + last.gsub(/[^a-z]/, "")).downcase
   end
 end
 
@@ -63,4 +68,8 @@ def generate_username(first, last, year, privilege = 0)
     $list_of_usernames.push(created_username)
     created_username
 
+end
+
+if $argument_list.length > 2 && $argument_list.length < 5
+  puts generate_username($argument_list[0], $argument_list[1], $argument_list[2])
 end
