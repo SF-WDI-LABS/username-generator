@@ -21,13 +21,13 @@ end
 
 def check_privilege(num = 0)
 	num = num.floor
-	if num.round == 0
+	if num == 0
 		return 'user'
-	elsif num.round == 1
+	elsif num == 1
 		return 'seller'
-	elsif num.round == 2
+	elsif num == 2
 		return 'manager'
-	elsif num.round >= 3
+	elsif num >= 3
 		return 'admin'
 	end
 end
@@ -45,20 +45,50 @@ def user_type_prefix (num)
 end
 
 
-
 def build_username(first, last, year, p_level = 0)
 	user_type_prefix(p_level).to_s + format_name(first, last) + year.to_s[-2, year.to_s.length-1]
 end
 
-@@count = 0
+
+
+$users = []
 
 def generate_username (first, last, year, p_level = 0)
-	if @@count == 0
-		new_name = build_username(first,last,year,p_level) 
-		@@count = @@count + 1
-		return new_name
+
+	# put in variable for easy reference
+	new_username = format_name(first,last) + year.to_s[-2, year.to_s.length-1]
+	# First check if our list is empty, if so, we just generate a new user
+	# with no incremental names attach, initialize the count, push into
+	# the user list and return that first registered name, ELSE =>
+	# From a list of users, check if new_username match any of the currently 
+	# registered user name, if match, add '_count' to new_username, update count
+	# and then push into increment_name list associated with that matched user
+	# and then return that incremented name as output
+	if $users[0] == nil 
+		user = {
+			:name => new_username,
+			:increment_names => [],
+			:count => 1,
+		}
+		$users.push(user)
+		return new_username
+	else
+		$users.each do |user|
+			if user[:name] == (new_username)
+				new_username = new_username + "_" + user[:count].to_s
+				user[:count] = user[:count].to_i + 1
+				user[:increment_names].push(new_username)
+				return new_username
+			end
+		end
+		# if by any chance our list does not contain any duplicate names
+		# we create a fresh hash, push it to the list and return that name
+		user = {
+			:name => new_username,
+			:increment_names => [],
+			:count => 1,
+		}
+		$users.push(user)
+		return new_username
 	end
-	new_name = build_username(first,last,year,p_level) + '_' + @@count.to_s
-	@@count = @@count + 1
-	return new_name
 end
