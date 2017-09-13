@@ -24,8 +24,21 @@ def build_username(first_name, last_name, year)
   user_year = year_build[2,3]
   built_user = name + user_year
 end
-
+# write an if statement to return the user type
+# use math.floor to round down to the lowest number
+# reminder to read all errors you are receiving
+# write elsif statement to try and get this to work
+# try not to overthink it
 def check_privilege(num = 0)
-    privilege = ["user", "seller" , "manager", "admin"]
-    privilege[0]
+    # privilege = ["user", "seller" , "manager", "admin"]
+    # privilege[0]
+    if num == 0
+      "user"
+    elsif num == 1
+      "seller"
+    elsif num == 2
+      "manager"
+    elsif num == 3
+      "admin"
+    end
 end
