@@ -59,13 +59,13 @@ You should see roughly the following output:
 
       1) #say_hello returns 'hello'
          Failure/Error: expect( say_hello ).to eq "hello"
-           
+
            expected: "hello"
                 got: "hi"
-           
+
            (compared using ==)
          # ./spec/the_warmup_spec.rb:8:in `block (2 levels) in <top (required)>'
-    
+
     Finished in 0.0028 seconds (files took 0.08831 seconds to load)
     8 examples, 8 failures
 
@@ -75,7 +75,7 @@ You should see roughly the following output:
 
 #### Hooray!
 * The first tests are failing. _We're seeing **RED**._
-* Now we need to write code to pass the tests and _turn them **GREEN**_. 
+* Now we need to write code to pass the tests and _turn them **GREEN**_.
 * When all the tests are green, we're ready to _stop and **REFACTOR**_!
 
 ## Warmup Challenge
@@ -112,7 +112,7 @@ Create a function called `user_type_prefix` that takes a level (integer) and ret
 Update your `build_username` function to use prefixes. It should now accept a privilege_level (in addition to the other parameters), and tack it on to the beginning of the username (e.g. "seller-jdoe78"). See the tests for more details.
 
 #### Level 3
-Create a function called `generate_username` that has four arguments (first_name, last_name, birth_year, privilege_level) and returns a _unique_ username. Come up with a simple way to store usernames as you create them. 
+Create a function called `generate_username` that has four arguments (first_name, last_name, birth_year, privilege_level) and returns a _unique_ username. Come up with a simple way to store usernames as you create them.
 
 STRETCH: If a username already exists, append "_1". Then, increment the counter each time you reuse the username (e.g. "jdoe78", "jdoe78\_1", "jdoe7\_2", "bbunny60", "bbunny60\_1").
 
