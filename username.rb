@@ -73,5 +73,5 @@ end
 if $argument_list.length == 3
   puts generate_username($argument_list[0], $argument_list[1], $argument_list[2])
 elsif $argument_list.length == 4
-  puts generate_username($argument_list[0], $argument_list[1], $argument_list[2], $argument_list[3])
+  puts generate_username($argument_list[0], $argument_list[1], $argument_list[2], $argument_list[3].to_i)
 end
